@@ -1,9 +1,10 @@
 var mongoose = require("mongoose");
 require("dotenv").config();
-//* Aqui ponemos la configuracion de nuestra BD utilizando mongoose
+//Aqui usamos mongoose y hacemos la conexion colocando el link que nos da nuestra base de datos en el mongodb atlas
 (async () => {
   try {
-    //* Con el connect nos conectamos a la BD y usando el link que nos proporciona Mongodb Atlas
+   // conexion con MOngoDB Atlas el link lleva nuestro usuario y contraseña 
+   //Colocar nuestra contraseña ya que el link no la trae por defecto
     const db = await mongoose.connect(
       "mongodb+srv://greyes17:Soysoyucol15@cluster0.ivf9j.mongodb.net/?retryWrites=true&w=majority",
       {
@@ -11,7 +12,9 @@ require("dotenv").config();
         useUnifiedTopology: true,
       }
     );
-    console.log("Mongodb is connected to", db.connection.host);
+    //Este mensaje nos indica que la base de datos si se conecto correctamente
+    console.log("La Base de datos esta conectada", db.connection.host);
+    //Y si no pues nos manda este error
   } catch (error) {
     console.error(error);
   }

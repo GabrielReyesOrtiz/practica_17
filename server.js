@@ -1,6 +1,7 @@
 //Inyectamos la dependencia express
 const express= require('express'); 
 let app = express();
+// Requirimos  database 
 require('./database');
 //Toca decirle que puerto usar 
 let PORT = process.env.PORT || 3000;
